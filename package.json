@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Dhana-Sree-02.github.io/p007frontend",
+  "homepage": "https://Dhana-Sree-02.github.io/Fedf_Student_Info_project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
