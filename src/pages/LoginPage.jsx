@@ -78,8 +78,10 @@ const LoginPage = () => {
                         Don't have an account? <span onClick={() => navigate('/signup')}>Register here</span>
                     </p>
                     <button type="button" onClick={() => navigate('/')} className="back-link">Back to Home</button>
-                    <h5>Admin mail: dhana0238@gmail.com</h5>
-                    <h5>Admin password: admin123</h5>
+                    <div style={{ marginTop: '1.5rem', textAlign: 'center', fontSize: '0.85rem', color: '#64748b' }}>
+                        Admin mail: dhana0238@gmail.com<br />
+                        Admin password: admin123
+                    </div>
                 </form>
             </div>
         </div>
