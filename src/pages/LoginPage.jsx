@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { APIURL, callApi } from '../lib';
 
 const LoginPage = () => {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -18,10 +19,19 @@ const LoginPage = () => {
             localStorage.setItem("userEmail", credentials.email);
             navigate('/main');
         } else {
-            alert("Login successful! Welcome to your profile.");
-            localStorage.setItem("userRole", "student");
-            localStorage.setItem("userEmail", credentials.email);
-            navigate('/student');
+            // Verify Student from Database
+            callApi("GET", APIURL + "users/getallusers", "", (res) => {
+                const student = res.find(user => user.email === credentials.email && user.password === credentials.password);
+                
+                if (student) {
+                    alert("Login successful! Welcome to your profile.");
+                    localStorage.setItem("userRole", "student");
+                    localStorage.setItem("userEmail", credentials.email);
+                    navigate('/student');
+                } else {
+                    alert("Invalid email or password. Please try again.");
+                }
+            });
         }
     };
 
