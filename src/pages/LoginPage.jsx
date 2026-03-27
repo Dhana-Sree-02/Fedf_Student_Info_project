@@ -30,7 +30,7 @@ const LoginPage = () => {
             <div className="glass-container">
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <img
-                        src="/logo1.jpg"
+                        src={`${import.meta.env.BASE_URL}logo1.jpg`}
                         alt="KL University Logo"
                         className="auth-logo"
                     />

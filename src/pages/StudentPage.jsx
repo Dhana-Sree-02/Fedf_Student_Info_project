@@ -46,7 +46,7 @@ const StudentPage = () => {
         <div className="student-page">
             <header className="student-header">
                 <div className="logo-section">
-                    <img src="/logo1.jpg" alt="KL University Logo" className="auth-logo" />
+                    <img src={`${import.meta.env.BASE_URL}logo1.jpg`} alt="KL University Logo" className="auth-logo" />
                     <h1>KL University</h1>
                 </div>
                 <button onClick={handleLogout} className="logout-btn">Logout</button>
